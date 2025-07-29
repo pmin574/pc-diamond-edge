@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Industrial design tokens
+				'industrial-blue': 'hsl(var(--industrial-blue))',
+				'precision-blue': 'hsl(var(--precision-blue))',
+				'metallic-silver': 'hsl(var(--metallic-silver))',
+				'steel-gray': 'hsl(var(--steel-gray))',
+				'cutting-edge': 'hsl(var(--cutting-edge))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
