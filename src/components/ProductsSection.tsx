@@ -79,8 +79,8 @@ const ProductsSection = () => {
                 <span className="text-foreground">Reduces machining cycle times</span>
               </li>
             </ul>
-            <Button variant="industrial" size="lg">
-              Explore Product Catalog
+            <Button variant="industrial" size="lg" asChild>
+              <a href="/catalogue">Explore Product Catalog</a>
             </Button>
           </div>
         </div>
