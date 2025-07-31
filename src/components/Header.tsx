@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Cog, Phone, Mail } from "lucide-react";
+import { Cog, Phone, Mail, User } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const { user, isAdmin, signOut } = useAuth();
+  
   return (
     <header className="bg-white shadow-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-6 py-4">
@@ -35,6 +39,25 @@ const Header = () => {
                 <span>info@procuttooling.com</span>
               </div>
             </div>
+            {user ? (
+              <div className="flex items-center gap-2">
+                {isAdmin && (
+                  <Link to="/admin">
+                    <Button variant="outline" size="sm">Admin</Button>
+                  </Link>
+                )}
+                <Button variant="outline" size="sm" onClick={signOut}>
+                  Sign Out
+                </Button>
+              </div>
+            ) : (
+              <Link to="/auth">
+                <Button variant="outline" size="sm">
+                  <User className="h-4 w-4 mr-2" />
+                  Sign In
+                </Button>
+              </Link>
+            )}
             <Button variant="quote" size="sm">
               Request Quote
             </Button>
